@@ -1,0 +1,43 @@
+/* Apply Rajdhani font throughout the site */
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #000;
+}
+
+/* Brand styling: default white text */
+.navbar-brand {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Highlight the "Forge" portion in yellow */
+.navbar-brand .highlight {
+  color: #F3C442;
+}
+
+/* Navbar navigation link styling with increased spacing and weight */
+.navbar-nav .nav-link {
+  margin: 0 0.75rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Active navbar item in yellow */
+.navbar-nav .nav-link.active {
+  color: #F3C442 !important;
+}
+
+/* Hover effect switches link color to yellow */
+.navbar-nav .nav-link:hover {
+  color: #F3C442 !important;
+}
