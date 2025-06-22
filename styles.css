@@ -1,15 +1,13 @@
 /* Apply Rajdhani font throughout the site */
-body {
+body, header {
   font-family: 'Rajdhani', sans-serif;
   background-color: #000;
   color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-/* Navbar styling */
-.navbar {
-  background-color: #000;
+  /* Dotted pattern */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.025) 2px, transparent 0);
+  background-size: 20px 20px;
+  background-position: 0 0;
 }
 
 /* Brand styling: default white text */
@@ -20,7 +18,7 @@ body {
 }
 
 /* Highlight the "Forge" portion in yellow */
-.navbar-brand .highlight {
+.highlight {
   color: #F3C442;
 }
 
@@ -41,3 +39,82 @@ body {
 .navbar-nav .nav-link:hover {
   color: #F3C442 !important;
 }
+
+/* Hero section styles */
+.hero-section {
+  display: flex;
+  /* Ensure background is visible behind content */
+  background: none;
+}
+
+.hero-title {
+  color: #fff;
+}
+
+.hero-subtitle {
+  color: #fff;
+  font-size: 1.25rem;
+  max-width: 600px;
+}
+
+
+/* Make the navbar and underline sticky */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1050; /* Above content, below modal */
+  background: #000; /* Match your site background */
+}
+
+/* Thin white line under navbar, faded from left to right */
+.navbar-underline {
+  height: 2px;
+  width: 89vw;
+  margin-left: 10vw;
+  margin-right: 1vw;
+  background: linear-gradient(
+    to left,
+    rgba(255,255,255,0.3) 0%,
+    rgba(255,255,255,0.025) 100%
+  );
+  border: none;
+  margin-top: -2px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Privacy Policy Section Styles */
+.privacy-policy-section {
+  background: none;
+}
+
+.privacy-title,
+.privacy-heading {
+  color: #fff;
+}
+
+.privacy-meta,
+.privacy-text,
+.privacy-list {
+  color: #ccc;
+}
+
+.privacy-list {
+  /* Remove default margin and padding for consistency */
+  margin-bottom: 1rem;
+}
+
+.privacy-link {
+  color: #F3C442;
+  text-decoration: underline;
+}
+
+.privacy-link:hover,
+.privacy-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*
