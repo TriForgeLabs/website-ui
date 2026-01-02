@@ -395,7 +395,7 @@
         function getPreferredTheme() {
             const stored = localStorage.getItem('theme');
             if (stored === 'dark' || stored === 'light') return stored;
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            return 'dark'; // Always default to dark theme
         }
         themeToggle.addEventListener('click', () => {
             const current = document.body.getAttribute('data-theme') || getPreferredTheme();
