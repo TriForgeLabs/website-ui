@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Monthly Profit Calculator</title>
+    <style>
+        .breakdown .loss {
+            color: #e67e22;
+            font-weight: 600;
+        }
+
+        .breakdown .earned {
+            color: var(--color-profit);
+            font-weight: 500;
+        }
+
+        .breakdown .deduct {
+            color: var(--color-negative);
+            font-weight: 500;
+        }
+
+        :root {
+            --color-bg: #f7f9fa;
+            --color-fg: #222;
+            --color-container: #fff;
+            --color-header: #2a4d7a;
+            --color-section: #1a3556;
+            --color-border: #e3e8ee;
+            --color-input-bg: #f8fafc;
+            --color-input-border: #bfc9d1;
+            --color-breakdown-bg: #f3f6fa;
+            --color-profit: #1e7e34;
+            --color-negative: #c0392b;
+            --color-detail: #4a5a6a;
+            --color-hr: #dbe3ea;
+            --color-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #181c20;
+                --color-fg: #e6eaf0;
+                --color-container: #23272e;
+                --color-header: #7bb1ff;
+                --color-section: #b3d1ff;
+                --color-border: #2c3440;
+                --color-input-bg: #23272e;
+                --color-input-border: #3a4250;
+                --color-breakdown-bg: #23272e;
+                --color-profit: #6be18a;
+                --color-negative: #ff6b6b;
+                --color-detail: #b3c2d1;
+                --color-hr: #2c3440;
+                --color-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        body[data-theme="dark"] {
+            --color-bg: #181c20;
+            --color-fg: #e6eaf0;
+            --color-container: #23272e;
+            --color-header: #7bb1ff;
+            --color-section: #b3d1ff;
+            --color-border: #2c3440;
+            --color-input-bg: #23272e;
+            --color-input-border: #3a4250;
+            --color-breakdown-bg: #23272e;
+            --color-profit: #6be18a;
+            --color-negative: #ff6b6b;
+            --color-detail: #b3c2d1;
+            --color-hr: #2c3440;
+            --color-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        body[data-theme="light"] {
+            --color-bg: #f7f9fa;
+            --color-fg: #222;
+            --color-container: #fff;
+            --color-header: #2a4d7a;
+            --color-section: #1a3556;
+            --color-border: #e3e8ee;
+            --color-input-bg: #f8fafc;
+            --color-input-border: #bfc9d1;
+            --color-breakdown-bg: #f3f6fa;
+            --color-profit: #1e7e34;
+            --color-negative: #c0392b;
+            --color-detail: #4a5a6a;
+            --color-hr: #dbe3ea;
+            --color-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-fg);
+            margin: 0;
+            padding: 0;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: var(--color-container);
+            border-radius: 10px;
+            box-shadow: var(--color-shadow);
+            padding: 32px 28px 24px 28px;
+            transition: background 0.2s, box-shadow 0.2s;
+            display: flex;
+            gap: 36px;
+            min-height: 600px;
+        }
+
+        .main-left {
+            flex: 1 1 380px;
+            min-width: 320px;
+            max-width: 520px;
+        }
+
+        .main-right {
+            flex: 0 0 340px;
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: sticky;
+            top: 32px;
+            height: fit-content;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 2.1rem;
+            color: var(--color-header);
+        }
+
+        h2 {
+            margin-top: 32px;
+            color: var(--color-section);
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 4px;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .row label {
+            flex: 1 0 220px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .row input[type="number"],
+        .row input[type="text"] {
+            width: 120px;
+            padding: 5px 8px;
+            font-size: 1rem;
+            border: 1px solid var(--color-input-border);
+            border-radius: 4px;
+            background: var(--color-input-bg);
+            color: var(--color-fg);
+            transition: background 0.2s, color 0.2s, border 0.2s;
+        }
+
+        .row input[type="number"]::-webkit-inner-spin-button,
+        .row input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .breakdown {
+            background: var(--color-breakdown-bg);
+            border-radius: 6px;
+            padding: 16px 18px;
+            margin-top: 10px;
+            font-size: 1.05rem;
+            transition: background 0.2s;
+        }
+
+        .breakdown .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            gap: 32px;
+        }
+
+        .breakdown .item span:first-child {
+            padding-right: 32px;
+        }
+
+        .breakdown .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .profit {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-profit);
+            text-align: center;
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+
+        .negative {
+            color: var(--color-negative);
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                gap: 0;
+                padding: 12px 2vw;
+            }
+
+            .main-left,
+            .main-right {
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .main-right {
+                position: static;
+                margin-top: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .row label {
+                flex-basis: 120px;
+                font-size: 0.98rem;
+            }
+
+            .row input {
+                width: 80px;
+            }
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 32px;
+            right: 40px;
+            background: none;
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 4px 16px;
+            color: var(--color-fg);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            z-index: 20;
+        }
+
+        .theme-toggle:focus {
+            outline: 2px solid var(--color-header);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="position:relative;">
+        <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" type="button">🌙 Dark</button>
+        <div class="main-left">
+            <h1>Monthly Profit Calculator</h1>
+            <hr style="border: none; border-top: 1.5px solid var(--color-border); margin: 18px 0 24px 0;">
+            <form id="profitForm" autocomplete="off">
+                <!-- User Counts -->
+                <div class="section">
+                    <h2>1. User Counts</h2>
+                    <div class="row">
+                        <label for="freeUsers">Number of Free Users</label>
+                        <input type="number" id="freeUsers" min="0" value="5000">
+                    </div>
+                    <div class="row">
+                        <label for="paidUsers">Number of Paid Users</label>
+                        <input type="number" id="paidUsers" min="0" value="300">
+                    </div>
+                    <div class="row">
+                        <label for="monthlyPrice">Monthly Price per Paid User</label>
+                        <input type="number" id="monthlyPrice" min="0" step="0.01" value="4.99">
+                    </div>
+                </div>
+                <!-- Firebase Usage Costs -->
+                <div class="section">
+                    <h2>2. Firebase Usage Costs</h2>
+                    <div class="row"><label><b>Per-user monthly averages</b></label></div>
+                    <div class="row">
+                        <label for="readsPerUser">Reads per user</label>
+                        <input type="number" id="readsPerUser" min="0" value="9000">
+                    </div>
+                    <div class="row">
+                        <label for="writesPerUser">Writes per user</label>
+                        <input type="number" id="writesPerUser" min="0" value="1000">
+                    </div>
+                    <div class="row">
+                        <label for="deletesPerUser">Deletes per user</label>
+                        <input type="number" id="deletesPerUser" min="0" value="2000">
+                    </div>
+                    <div class="row"><label><b>Firebase Pricing</b></label></div>
+                    <div class="row">
+                        <label for="costPer100kReads">Cost per 100K Reads ($)</label>
+                        <input type="number" id="costPer100kReads" min="0" step="0.01" value="0.06">
+                    </div>
+                    <div class="row">
+                        <label for="costPer100kWrites">Cost per 100K Writes ($)</label>
+                        <input type="number" id="costPer100kWrites" min="0" step="0.01" value="0.18">
+                    </div>
+                    <div class="row">
+                        <label for="costPer100kDeletes">Cost per 100K Deletes ($)</label>
+                        <input type="number" id="costPer100kDeletes" min="0" step="0.01" value="0.02">
+                    </div>
+                    <div class="row"><label><b>Cloud Functions</b></label></div>
+                    <div class="row">
+                        <label for="cloudFuncCostPer1M">Cloud Function Cost per 1M Requests ($)</label>
+                        <input type="number" id="cloudFuncCostPer1M" min="0" step="0.01" value="0.40">
+                    </div>
+                    <div class="row">
+                        <label for="cloudFuncRequestsPerMonth">Cloud Function Requests per Month (in millions)</label>
+                        <input type="number" id="cloudFuncRequestsPerMonth" min="0" step="0.01" value="1">
+                    </div>
+                </div>
+                <!-- OpenAI Token Costs -->
+                <div class="section">
+                    <h2>3. OpenAI Token Costs</h2>
+                    <div class="row">
+                        <label for="costPer1MInput">Cost per 1M Input Tokens ($)</label>
+                        <input type="number" id="costPer1MInput" min="0" step="0.01" value="0.4">
+                    </div>
+                    <div class="row">
+                        <label for="costPer1MOutput">Cost per 1M Output Tokens ($)</label>
+                        <input type="number" id="costPer1MOutput" min="0" step="0.01" value="1.6">
+                    </div>
+                    <div class="row">
+                        <label for="avgInputTokens">Avg. Input Tokens per Request</label>
+                        <input type="number" id="avgInputTokens" min="0" value="500">
+                    </div>
+                    <div class="row">
+                        <label for="avgOutputTokens">Avg. Output Tokens per Request</label>
+                        <input type="number" id="avgOutputTokens" min="0" value="100">
+                    </div>
+                    <div class="row">
+                        <label for="requestsPerUser">Requests per Free User per Month</label>
+                        <input type="number" id="requestsPerUser" min="0" value="150">
+                    </div>
+                    <div class="row">
+                        <label for="paidRequestMultiplier">Paid User Request Multiplier</label>
+                        <input type="number" id="paidRequestMultiplier" min="1" step="1" value="5">
+                    </div>
+                </div>
+                <!-- Ads Revenue -->
+                <div class="section">
+                    <h2>4. Ads Revenue</h2>
+                    <div class="row">
+                        <label for="adsPerUser">Avg. Ads Viewed per Free User (auto: 0.6 × Writes per User)</label>
+                        <input type="number" id="adsPerUser" min="0" value="600" readonly
+                            style="background:var(--color-input-bg); color:var(--color-fg);">
+                    </div>
+                    <div class="row">
+                        <label for="revenuePerAd">Revenue per 1000 Ad Views (CPM, $)</label>
+                        <input type="number" id="revenuePerAd" min="0" step="0.01" value="0.1">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="main-right">
+            <div class="section">
+                <h2>Results & Breakdown</h2>
+                <div class="breakdown" id="breakdown">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="profit" id="profitDisplay"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+        }
+        function getPreferredTheme() {
+            const stored = localStorage.getItem('theme');
+            if (stored === 'dark' || stored === 'light') return stored;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        themeToggle.addEventListener('click', () => {
+            const current = document.body.getAttribute('data-theme') || getPreferredTheme();
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+        // Set initial theme
+        setTheme(getPreferredTheme());
+        // Helper for currency formatting
+        function fmtCurrency(val) {
+            return val < 0 ?
+                '-$' + Math.abs(val).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) :
+                '$' + val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+        function fmtNumber(val) {
+            return val.toLocaleString();
+        }
+
+        function calc() {
+            // ...existing code...
+            // User counts
+            const freeUsers = +document.getElementById('freeUsers').value;
+            const paidUsers = +document.getElementById('paidUsers').value;
+            const monthlyPrice = +document.getElementById('monthlyPrice').value;
+
+            // Firebase usage
+            const readsPerUser = +document.getElementById('readsPerUser').value;
+            const writesPerUser = +document.getElementById('writesPerUser').value;
+            const deletesPerUser = +document.getElementById('deletesPerUser').value;
+            const costPer100kReads = +document.getElementById('costPer100kReads').value;
+            const costPer100kWrites = +document.getElementById('costPer100kWrites').value;
+            const costPer100kDeletes = +document.getElementById('costPer100kDeletes').value;
+            // Cloud Functions
+            const cloudFuncCostPer1M = +document.getElementById('cloudFuncCostPer1M').value;
+            const cloudFuncRequestsPerMonth = +document.getElementById('cloudFuncRequestsPerMonth').value;
+
+            // OpenAI
+            const costPer1MInput = +document.getElementById('costPer1MInput').value;
+            const costPer1MOutput = +document.getElementById('costPer1MOutput').value;
+            const avgInputTokens = +document.getElementById('avgInputTokens').value;
+            const avgOutputTokens = +document.getElementById('avgOutputTokens').value;
+            const requestsPerUser = +document.getElementById('requestsPerUser').value;
+            const paidRequestMultiplier = +document.getElementById('paidRequestMultiplier').value;
+
+            // Ads
+            // Ads per user is auto-calculated as 0.6 × writes per user
+            const adsPerUser = +(document.getElementById('writesPerUser').value * 0.6).toFixed(2);
+            document.getElementById('adsPerUser').value = adsPerUser;
+            const revenuePerAd = +document.getElementById('revenuePerAd').value;
+
+            // Revenue
+            const subscriptionRevenue = paidUsers * monthlyPrice;
+            const adRevenue = freeUsers * adsPerUser * (revenuePerAd / 1000);
+
+
+            // Total users for breakdown
+            const totalUsers = freeUsers + paidUsers;
+
+            // Firebase cost
+            const totalReads = (freeUsers + paidUsers) * readsPerUser;
+            const totalWrites = (freeUsers + paidUsers) * writesPerUser;
+            const totalDeletes = (freeUsers + paidUsers) * deletesPerUser;
+            const firebaseCost =
+                (totalReads / 100000) * costPer100kReads +
+                (totalWrites / 100000) * costPer100kWrites +
+                (totalDeletes / 100000) * costPer100kDeletes +
+                (cloudFuncRequestsPerMonth * cloudFuncCostPer1M);
+
+            // OpenAI cost
+            const freeRequests = freeUsers * requestsPerUser;
+            const paidRequests = paidUsers * requestsPerUser * paidRequestMultiplier;
+            const totalRequests = freeRequests + paidRequests;
+            const totalInputTokens = totalRequests * avgInputTokens;
+            const totalOutputTokens = totalRequests * avgOutputTokens;
+            const openaiCost =
+                (totalInputTokens / 1_000_000) * costPer1MInput +
+                (totalOutputTokens / 1_000_000) * costPer1MOutput;
+
+            // Apple/Google cut is only on paid subscription revenue
+            const appleGoogleCut = subscriptionRevenue * 0.15;
+            const afterPlatform = subscriptionRevenue - appleGoogleCut;
+            // Net profit after all costs and platform cut
+            // Ad revenue is not subject to platform cut
+            const grossProfit = afterPlatform + adRevenue;
+            const netAfterPlatform = grossProfit - firebaseCost - openaiCost;
+            const taxes = netAfterPlatform > 0 ? netAfterPlatform * 0.25 : 0;
+            const afterTaxes = netAfterPlatform - taxes;
+
+            // Profit
+            const profit = (subscriptionRevenue + adRevenue) - (firebaseCost + openaiCost);
+
+            // Breakdown HTML
+            const breakdown = `
+                <div class="item"><span>Paid Subscription Revenue:</span> <span class="earned">${fmtCurrency(subscriptionRevenue)}</span></div>
+                <div class="item"><span>Ad Revenue:</span> <span class="earned">${fmtCurrency(adRevenue)}</span></div>
+                <div class="item"><span>Firebase Cost:</span> <span class="deduct">${fmtCurrency(firebaseCost)}</span></div>
+                <div class="item"><span>OpenAI Cost:</span> <span class="deduct">${fmtCurrency(openaiCost)}</span></div>
+                <hr style="margin:10px 0; border:0; border-top:1px solid var(--color-hr);">
+                <div class="item"><span>Apple/Google Platform Cut (15% of Paid):</span> <span class="deduct">${fmtCurrency(appleGoogleCut)}</span></div>
+                <div class="item"><span>After Platform Cut (Paid):</span> <span class="${afterPlatform < 0 ? 'negative' : 'earned'}">${fmtCurrency(afterPlatform)}</span></div>
+                <div class="item"><span>Gross Profit (After Platform + Ad):</span> <span class="${grossProfit < 0 ? 'negative' : 'earned'}">${fmtCurrency(grossProfit)}</span></div>
+                <div class="item"><span>Net Profit After All Costs:</span> <span class="${netAfterPlatform < 0 ? 'negative' : 'earned'}">${fmtCurrency(netAfterPlatform)}</span></div>
+                <div class="item"><span>Estimated Taxes (30%):</span> <span class="deduct">${fmtCurrency(taxes)}</span></div>
+                <div class="item"><span><b>After Taxes:</b></span> <span class="${afterTaxes < 0 ? 'loss' : 'earned'}">${fmtCurrency(afterTaxes)}${afterTaxes < 0 ? ' <span style=\"font-size:0.95em; color:#e67e22; font-weight:400; padding-right:0px;\">(Loss)</span>' : ''}</span></div>
+                <div style="margin-top:10px; font-size:0.98em; color:var(--color-detail);">
+                    <b>Details:</b><br>
+                    <span>Total Users:</span> ${fmtNumber(totalUsers)}<br>
+                    <span>Total Reads:</span> ${fmtNumber(totalReads)}<br>
+                    <span>Total Writes:</span> ${fmtNumber(totalWrites)}<br>
+                    <span>Total Deletes:</span> ${fmtNumber(totalDeletes)}<br>
+                    <span>Total Requests (OpenAI):</span> ${fmtNumber(totalRequests)}<br>
+                    <span>Free User Requests:</span> ${fmtNumber(freeRequests)}<br>
+                    <span>Paid User Requests:</span> ${fmtNumber(paidRequests)}<br>
+                    <span>Total Input Tokens (OpenAI):</span> ${fmtNumber(totalInputTokens)}<br>
+                    <span>Total Output Tokens (OpenAI):</span> ${fmtNumber(totalOutputTokens)}
+                </div>
+            `;
+            document.getElementById('breakdown').innerHTML = breakdown;
+            document.getElementById('profitDisplay').textContent = '';
+        }
+
+        // Attach event listeners to all inputs
+        document.querySelectorAll('#profitForm input').forEach(input => {
+            input.addEventListener('input', calc);
+        });
+
+        // Initial calculation
+        window.addEventListener('DOMContentLoaded', calc);
+    </script>
+</body>
+
+</html>
