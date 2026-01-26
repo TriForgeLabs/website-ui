@@ -15,7 +15,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#about">
+            <a class="navbar-brand" href="/">
                 Tri<span class="highlight">Forge</span>Labs
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -25,13 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#about">About</a>
+                        <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pages/privacy.html">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/data.html">Data Policy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pages/tos.html">Terms of Service</a>
@@ -45,29 +42,412 @@
 
 <body>
     <!-- About Section -->
-    <section id="about" class="hero-section d-flex">
+    <section id="home" class="hero-section d-flex align-items-center justify-content-center">
+        <!-- Nebula Background Glow -->
+        <div class="nebula-bg"></div>
+
+        <!-- Rotating Planet -->
+        <div class="planet-container">
+            <svg class="planet-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="planetGradient" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#1a1a12" />
+                        <stop offset="50%" stop-color="#0f0f0a" />
+                        <stop offset="100%" stop-color="#050503" />
+                    </radialGradient>
+                    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="70%" stop-color="transparent" />
+                        <stop offset="100%" stop-color="rgba(243, 196, 66, 0.08)" />
+                    </radialGradient>
+                    <clipPath id="planetClip">
+                        <circle cx="100" cy="100" r="80" />
+                    </clipPath>
+                </defs>
+
+                <!-- Planet glow -->
+                <circle cx="100" cy="100" r="95" fill="url(#glowGradient)" />
+
+                <!-- Planet body -->
+                <circle cx="100" cy="100" r="80" fill="url(#planetGradient)" />
+
+                <!-- Surface lines (horizontal latitude lines - static) -->
+                <g clip-path="url(#planetClip)">
+                    <ellipse cx="100" cy="60" rx="77" ry="15" fill="none" stroke="rgba(243, 196, 66, 0.04)"
+                        stroke-width="0.5" />
+                    <ellipse cx="100" cy="80" rx="79" ry="12" fill="none" stroke="rgba(243, 196, 66, 0.04)"
+                        stroke-width="0.5" />
+                    <ellipse cx="100" cy="100" rx="80" ry="10" fill="none" stroke="rgba(243, 196, 66, 0.05)"
+                        stroke-width="0.5" />
+                    <ellipse cx="100" cy="120" rx="79" ry="12" fill="none" stroke="rgba(243, 196, 66, 0.04)"
+                        stroke-width="0.5" />
+                    <ellipse cx="100" cy="140" rx="77" ry="15" fill="none" stroke="rgba(243, 196, 66, 0.04)"
+                        stroke-width="0.5" />
+                </g>
+
+                <!-- Longitude lines (spinning on horizontal axis) -->
+                <g clip-path="url(#planetClip)" class="planet-surface">
+                    <ellipse class="longitude-line" cx="100" cy="100" rx="0" ry="80" fill="none"
+                        stroke="rgba(243, 196, 66, 0.05)" stroke-width="0.5" />
+                    <ellipse class="longitude-line" cx="100" cy="100" rx="20" ry="80" fill="none"
+                        stroke="rgba(243, 196, 66, 0.04)" stroke-width="0.5" />
+                    <ellipse class="longitude-line" cx="100" cy="100" rx="40" ry="80" fill="none"
+                        stroke="rgba(243, 196, 66, 0.04)" stroke-width="0.5" />
+                    <ellipse class="longitude-line" cx="100" cy="100" rx="60" ry="80" fill="none"
+                        stroke="rgba(243, 196, 66, 0.03)" stroke-width="0.5" />
+                    <ellipse class="longitude-line" cx="100" cy="100" rx="80" ry="80" fill="none"
+                        stroke="rgba(243, 196, 66, 0.03)" stroke-width="0.5" />
+                </g>
+
+                <!-- Orbital ring -->
+                <ellipse class="orbital-ring" cx="100" cy="100" rx="120" ry="30" fill="none"
+                    stroke="rgba(243, 196, 66, 0.1)" stroke-width="1" stroke-dasharray="8 4"
+                    transform="rotate(-20, 100, 100)" />
+
+                <!-- Small orbiting dot -->
+                <circle class="orbiting-dot" cx="220" cy="100" r="2.5" fill="#F3C442">
+                </circle>
+            </svg>
+        </div>
+
+        <!-- Stars SVG -->
+        <svg class="node-visualization stars-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Floating Dust/Stars with animations -->
+            <circle cx="100" cy="100" r="0.8" fill="white" class="star star-1"></circle>
+            <circle cx="700" cy="500" r="0.6" fill="white" class="star star-2"></circle>
+            <circle cx="200" cy="550" r="0.5" fill="white" class="star star-3"></circle>
+            <circle cx="650" cy="150" r="0.7" fill="white" class="star star-4"></circle>
+            <circle cx="150" cy="400" r="0.5" fill="white" class="star star-5"></circle>
+            <circle cx="50" cy="250" r="0.6" fill="white" class="star star-1"></circle>
+            <circle cx="750" cy="300" r="0.5" fill="white" class="star star-2"></circle>
+            <circle cx="600" cy="80" r="0.8" fill="white" class="star star-3"></circle>
+            <circle cx="180" cy="120" r="0.4" fill="white" class="star star-4"></circle>
+            <circle cx="420" cy="520" r="0.6" fill="white" class="star star-5"></circle>
+            <circle cx="80" cy="480" r="0.5" fill="white" class="star star-1"></circle>
+            <circle cx="720" cy="220" r="0.7" fill="white" class="star star-2"></circle>
+            <circle cx="320" cy="60" r="0.5" fill="white" class="star star-3"></circle>
+            <circle cx="580" cy="420" r="0.6" fill="white" class="star star-4"></circle>
+            <circle cx="40" cy="350" r="0.4" fill="white" class="star star-5"></circle>
+            <circle cx="760" cy="120" r="0.6" fill="white" class="star star-1"></circle>
+            <circle cx="280" cy="480" r="0.5" fill="white" class="star star-2"></circle>
+            <circle cx="520" cy="580" r="0.7" fill="white" class="star star-3"></circle>
+            <circle cx="140" cy="200" r="0.4" fill="white" class="star star-4"></circle>
+            <circle cx="680" cy="380" r="0.5" fill="white" class="star star-5"></circle>
+            <circle cx="380" cy="140" r="0.6" fill="white" class="star star-1"></circle>
+            <circle cx="220" cy="320" r="0.5" fill="white" class="star star-2"></circle>
+            <circle cx="620" cy="260" r="0.4" fill="white" class="star star-3"></circle>
+            <circle cx="460" cy="50" r="0.7" fill="white" class="star star-4"></circle>
+            <circle cx="100" cy="560" r="0.5" fill="white" class="star star-5"></circle>
+        </svg>
+
+        <div class="container text-center position-relative" style="z-index: 10;">
+            <h1 class="hero-title-large">
+                Driving Humanity<br>Forward
+            </h1>
+            <p class="hero-subtitle-centered mt-4">
+                We build the digital infrastructure for a better tomorrow, empowering<br>
+                creators with visionary productivity tools.
+            </p>
+            <div class="hero-buttons mt-5">
+                <a href="#features" class="btn btn-primary-gold">View Our Portfolio</a>
+                <a href="#pillars" class="btn btn-outline-light-custom">Our Vision</a>
+            </div>
+        </div>
+
+        <!-- Shooting Star -->
+        <div class="shooting-star-container">
+            <div class="shooting-star">
+                <div class="shooting-star-trail"></div>
+                <div class="shooting-star-head"></div>
+            </div>
+        </div>
+
+        <!-- Explore Indicator -->
+        <div class="explore-indicator">
+            <span>EXPLORE</span>
+            <div class="explore-arrows">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Pillars Section -->
+    <section id="pillars" class="pillars-section">
         <div class="container">
-            <div class="row mt-5 align-items-center">
-                <div class="col-lg-7 col-md-12">
-                    <h1 class="display-4 fw-bold hero-title">
-                        We Forge <span class="highlight">Apps</span> That<br>
-                        Power Your <span class="highlight">Future</span>
-                    </h1>
-                    <p class="lead hero-subtitle mt-4">
-                        <span class="fw-bold">Tri<span class="highlight">Forge</span>Labs</span>
-                        is where bold ideas are forged into digital solutions that inspire, empower, and make a
-                        difference.
-                    </p>
+            <div class="pillars-header">
+                <h2 class="pillars-title">Our Core Pillars</h2>
+                <div class="pillars-underline"></div>
+                <p class="pillars-subtitle">Architecting the future through precision engineering and human-centric
+                    design philosophy.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Card 1: Human Potential -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+                                <path
+                                    d="M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+                            </svg>
+                        </div>
+                        <h3 class="pillar-card-title">Human Potential</h3>
+                        <p class="pillar-card-description">Empowering individuals through intuitive productivity tools
+                            that reduce cognitive load.</p>
+                    </div>
                 </div>
-                <div class="col-lg-5 col-md-12 d-lg-flex justify-content-end">
-                    <img src="assets/triforge.svg" alt="TriForgeLabs Logo" class="hero-svg"
-                        style="max-width: 90%; height: auto;">
+                <!-- Card 2: Digital Infrastructure -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="5" r="2" />
+                                <circle cx="5" cy="19" r="2" />
+                                <circle cx="19" cy="19" r="2" />
+                                <circle cx="12" cy="12" r="2" />
+                                <line x1="12" y1="7" x2="12" y2="10" />
+                                <line x1="6.5" y1="17.5" x2="10.5" y2="13.5" />
+                                <line x1="17.5" y1="17.5" x2="13.5" y2="13.5" />
+                            </svg>
+                        </div>
+                        <h3 class="pillar-card-title">Digital Infrastructure</h3>
+                        <p class="pillar-card-description">Robust architecture built for scale and reliability, handling
+                            millions of daily operations.</p>
+                    </div>
+                </div>
+                <!-- Card 3: Future Ready -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                                <path
+                                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                            </svg>
+                        </div>
+                        <h3 class="pillar-card-title">Future Ready</h3>
+                        <p class="pillar-card-description">Cutting-edge technology stack that anticipates tomorrow's
+                            enterprise needs today.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="data" class="privacy-policy-section py-5">
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- The Suite Section -->
+    <section id="suite" class="suite-section">
+        <!-- Stars SVG -->
+        <svg class="suite-stars-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="0.8" fill="white" class="star star-1"></circle>
+            <circle cx="700" cy="500" r="0.6" fill="white" class="star star-2"></circle>
+            <circle cx="200" cy="550" r="0.5" fill="white" class="star star-3"></circle>
+            <circle cx="650" cy="150" r="0.7" fill="white" class="star star-4"></circle>
+            <circle cx="150" cy="400" r="0.5" fill="white" class="star star-5"></circle>
+            <circle cx="50" cy="250" r="0.6" fill="white" class="star star-1"></circle>
+            <circle cx="750" cy="300" r="0.5" fill="white" class="star star-2"></circle>
+            <circle cx="600" cy="80" r="0.8" fill="white" class="star star-3"></circle>
+            <circle cx="180" cy="120" r="0.4" fill="white" class="star star-4"></circle>
+            <circle cx="420" cy="520" r="0.6" fill="white" class="star star-5"></circle>
+            <circle cx="80" cy="480" r="0.5" fill="white" class="star star-1"></circle>
+            <circle cx="720" cy="220" r="0.7" fill="white" class="star star-2"></circle>
+            <circle cx="320" cy="60" r="0.5" fill="white" class="star star-3"></circle>
+            <circle cx="580" cy="420" r="0.6" fill="white" class="star star-4"></circle>
+            <circle cx="40" cy="350" r="0.4" fill="white" class="star star-5"></circle>
+            <circle cx="760" cy="120" r="0.6" fill="white" class="star star-1"></circle>
+            <circle cx="280" cy="480" r="0.5" fill="white" class="star star-2"></circle>
+            <circle cx="520" cy="580" r="0.7" fill="white" class="star star-3"></circle>
+            <circle cx="140" cy="200" r="0.4" fill="white" class="star star-4"></circle>
+            <circle cx="680" cy="380" r="0.5" fill="white" class="star star-5"></circle>
+        </svg>
+        <div class="container">
+            <div class="suite-header text-center">
+                <h2 class="suite-title">The Suite</h2>
+                <p class="suite-subtitle">A unified ecosystem of productivity tools designed to work in harmony with
+                    your workflow.</p>
+            </div>
+
+            <div class="phone-showcase">
+                <!-- Left Phone (dimmed) -->
+                <div class="phone-mockup phone-side">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-content-placeholder">
+                                <div class="placeholder-icon"></div>
+                                <span class="coming-soon-text">Coming Soon...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Phone (featured) -->
+                <div class="phone-mockup phone-center">
+                    <div class="phone-frame phone-frame-active">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="app-header">
+                                <span class="app-name">TalkToCalorie</span>
+                                <svg class="app-settings" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z" />
+                                    <path d="M10 2c1 .5 2 2 2 5" />
+                                </svg>
+                            </div>
+                            <div class="app-task-bar">
+                                <div class="task-indicator"></div>
+                                <div class="task-progress"></div>
+                            </div>
+                            <div class="app-timer">
+                                <div class="timer-ring">
+                                    <span class="timer-value">1,850</span>
+                                    <span class="timer-label">cal</span>
+                                </div>
+                            </div>
+                            <button class="app-button">Learn More <svg class="app-button-arrow"
+                                    xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Phone (dimmed) -->
+                <div class="phone-mockup phone-side">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-content-placeholder">
+                                <div class="placeholder-icon"></div>
+                                <span class="coming-soon-text">Coming Soon...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-info text-center">
+                <h3 class="app-info-title">TalkToCalorie</h3>
+                <p class="app-info-tagline">AI-Powered Calorie & Habit Tracker</p>
+                <p class="app-info-description">Intelligent nutrition tracking and habit building powered by
+                    conversational AI. Simply talk to log your meals and build healthier habits effortlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Validation at Scale Section -->
+    <section id="validation" class="validation-section">
+        <div class="validation-dots-bg"></div>
+        <div class="container position-relative">
+            <div class="validation-header text-center">
+                <h2 class="validation-title">
+                    <span class="validation-highlight">Human-Led Engineering</span>,<br>
+                    AI-Accelerated Execution
+                </h2>
+                <p class="validation-subtitle">
+                    AI is used as an acceleration layer—not a final authority.<br>
+                    Every deliverable is reviewed, refined, and validated by industry-experienced<br> software
+                    engineers to ensure correctness, security, and production readiness.
+                </p>
+            </div>
+
+            <div class="validation-flow">
+                <!-- Input Layer Box -->
+                <div class="validation-box input-box">
+                    <span class="box-label">INPUT LAYER</span>
+                    <h4 class="box-title">AI-Assisted Draft Output</h4>
+                    <div class="placeholder-bars">
+                        <div class="bar bar-full"></div>
+                        <div class="bar bar-medium"></div>
+                        <div class="bar bar-full"></div>
+                        <div class="bar bar-short"></div>
+                    </div>
+                </div>
+
+                <!-- Connection Line Left -->
+                <div class="flow-connector">
+                    <div class="connector-line"></div>
+                </div>
+
+                <!-- Center Gate -->
+                <div class="validation-gate">
+                    <div class="gate-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                    </div>
+                    <span class="gate-label">ENGINEER REVIEW / <br> VALIDATION LAYER</span>
+                </div>
+
+                <!-- Connection Line Right -->
+                <div class="flow-connector">
+                    <div class="connector-line"></div>
+                </div>
+
+                <!-- Output Box -->
+                <div class="validation-box output-box">
+                    <span class="box-label output-label">SECURE OUTPUT</span>
+                    <h4 class="box-title output-title">Engineer-Reviewed,<br> Production-Ready Architecture</h4>
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="check-text">Reviewed by industry-experienced engineers</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="check-text">Optimized for maintainability and scalability</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="check-text">Security and edge-cases evaluated</span>
+                        </div>
+                        <div class="checklist-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="check-text">Aligned with real-world production standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Bootstrap JS (Bundle includes Popper) -->
@@ -110,9 +490,278 @@
             window.addEventListener("scroll", onScroll);
             // Call onScroll once on page load to set the correct active link
             onScroll();
+
+            // Nebula cursor tracking with smooth lag
+            const heroSection = document.getElementById('home');
+            const nebulaBg = document.querySelector('.nebula-bg');
+
+            if (heroSection && nebulaBg) {
+                let targetX = 50;
+                let targetY = 50;
+                let currentX = 50;
+                let currentY = 50;
+                const ease = 0.02; // Lower = more lag
+
+                function animateNebula() {
+                    currentX += (targetX - currentX) * ease;
+                    currentY += (targetY - currentY) * ease;
+
+                    nebulaBg.style.background = `radial-gradient(circle at ${currentX}% ${currentY}%, rgba(243, 196, 66, 0.06) 0%, rgba(10, 10, 8, 1) 60%)`;
+
+                    requestAnimationFrame(animateNebula);
+                }
+
+                animateNebula();
+
+                heroSection.addEventListener('mousemove', (e) => {
+                    const rect = heroSection.getBoundingClientRect();
+                    targetX = ((e.clientX - rect.left) / rect.width) * 100;
+                    targetY = ((e.clientY - rect.top) / rect.height) * 100;
+                });
+
+                heroSection.addEventListener('mouseleave', () => {
+                    targetX = 50;
+                    targetY = 50;
+                });
+            }
+
+            // Planet rotation animation
+            const longitudeLines = document.querySelectorAll('.longitude-line');
+            const orbitingDot = document.querySelector('.orbiting-dot');
+            let spinPhase = 0;
+            let orbitAngle = 0;
+
+            // Base rx values for each longitude line
+            const baseRx = [0, 20, 40, 60, 80];
+
+            function animatePlanet() {
+                // Slow horizontal axis spin
+                spinPhase += 0.05;
+
+                // Animate longitude lines to create spinning effect
+                longitudeLines.forEach((line, i) => {
+                    // Create a wave effect that simulates 3D rotation
+                    const phase = spinPhase + (i * 72); // Offset each line by 72 degrees
+                    const rx = Math.abs(Math.sin(phase * Math.PI / 180) * 80);
+                    line.setAttribute('rx', rx);
+                });
+
+                // Orbiting dot
+                orbitAngle += 0.08;
+                const orbitRadiusX = 120;
+                const orbitRadiusY = 30;
+                const centerX = 100;
+                const centerY = 100;
+                const tiltAngle = -20 * (Math.PI / 180);
+
+                // Calculate position on tilted ellipse
+                const x = centerX + orbitRadiusX * Math.cos(orbitAngle * Math.PI / 180);
+                const y = centerY + orbitRadiusY * Math.sin(orbitAngle * Math.PI / 180);
+
+                // Apply tilt rotation
+                const rotatedX = centerX + (x - centerX) * Math.cos(tiltAngle) - (y - centerY) * Math.sin(tiltAngle);
+                const rotatedY = centerY + (x - centerX) * Math.sin(tiltAngle) + (y - centerY) * Math.cos(tiltAngle);
+
+                if (orbitingDot) {
+                    orbitingDot.setAttribute('cx', rotatedX);
+                    orbitingDot.setAttribute('cy', rotatedY);
+
+                    // Fade when behind planet
+                    const behindPlanet = Math.sin(orbitAngle * Math.PI / 180) > 0;
+                    orbitingDot.style.opacity = behindPlanet ? '0.3' : '1';
+                }
+
+                requestAnimationFrame(animatePlanet);
+            }
+
+            animatePlanet();
+
+            // Shooting star animation
+            const shootingStar = document.querySelector('.shooting-star');
+            let isFirstShootingStar = true;
+
+            function launchShootingStar() {
+                // First shooting star after 1 second, then random 5-15 seconds
+                const delay = isFirstShootingStar ? 1000 : 5000 + Math.random() * 10000;
+                isFirstShootingStar = false;
+
+                setTimeout(() => {
+                    // Determine random start side (0: top, 1: right, 2: bottom, 3: left)
+                    const startSide = Math.floor(Math.random() * 4);
+                    let startX, startY, endX, endY;
+
+                    const heroSection = document.getElementById('home');
+                    const width = heroSection.offsetWidth;
+                    const height = heroSection.offsetHeight;
+
+                    switch (startSide) {
+                        case 0: // From top
+                            startX = Math.random() * width;
+                            startY = -50;
+                            endX = startX + (Math.random() - 0.5) * width;
+                            endY = height + 50;
+                            break;
+                        case 1: // From right
+                            startX = width + 50;
+                            startY = Math.random() * height;
+                            endX = -50;
+                            endY = startY + (Math.random() - 0.5) * height;
+                            break;
+                        case 2: // From bottom
+                            startX = Math.random() * width;
+                            startY = height + 50;
+                            endX = startX + (Math.random() - 0.5) * width;
+                            endY = -50;
+                            break;
+                        case 3: // From left
+                            startX = -50;
+                            startY = Math.random() * height;
+                            endX = width + 50;
+                            endY = startY + (Math.random() - 0.5) * height;
+                            break;
+                    }
+
+                    // Calculate angle for rotation
+                    const angle = Math.atan2(endY - startY, endX - startX) * (180 / Math.PI);
+
+                    // Set initial position and rotation
+                    shootingStar.style.transform = `translate(${startX}px, ${startY}px) rotate(${angle}deg)`;
+                    shootingStar.style.opacity = '1';
+
+                    // Animate across screen
+                    const duration = 1500 + Math.random() * 1000; // 1.5-2.5 seconds
+                    const startTime = performance.now();
+
+                    function animateShootingStar(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        // Slow at start, fast at end (ease-in curve)
+                        const easeProgress = Math.pow(progress, 2.5);
+
+                        const currentX = startX + (endX - startX) * easeProgress;
+                        const currentY = startY + (endY - startY) * easeProgress;
+
+                        shootingStar.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg)`;
+
+                        // Fade out near the end
+                        if (progress > 0.7) {
+                            shootingStar.style.opacity = 1 - ((progress - 0.7) / 0.3);
+                        }
+
+                        if (progress < 1) {
+                            requestAnimationFrame(animateShootingStar);
+                        } else {
+                            shootingStar.style.opacity = '0';
+                            launchShootingStar(); // Schedule next shooting star
+                        }
+                    }
+
+                    requestAnimationFrame(animateShootingStar);
+                }, delay);
+            }
+
+            launchShootingStar();
+
+            // Random star animation for hero and suite sections
+            const allStars = document.querySelectorAll('.stars-svg .star, .suite-stars-svg .star');
+
+            allStars.forEach(star => {
+                // Set random initial position
+                star.setAttribute('cx', Math.random() * 800);
+                star.setAttribute('cy', Math.random() * 600);
+
+                // Animate each star individually
+                animateStar(star);
+            });
+
+            function animateStar(star) {
+                const duration = 5000 + Math.random() * 4000; // 5-9 seconds
+                const startTime = performance.now();
+                const startOpacity = 0.1;
+                const peakOpacity = 0.6 + Math.random() * 0.4;
+
+                function animate(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = elapsed / duration;
+
+                    if (progress < 1) {
+                        // Fade in and out using sine wave
+                        const opacity = startOpacity + (peakOpacity - startOpacity) * Math.sin(progress * Math.PI);
+                        star.style.opacity = opacity;
+                        requestAnimationFrame(animate);
+                    } else {
+                        // Animation complete - move to new random position and restart
+                        star.setAttribute('cx', Math.random() * 800);
+                        star.setAttribute('cy', Math.random() * 600);
+                        star.setAttribute('r', 0.4 + Math.random() * 0.5);
+                        animateStar(star);
+                    }
+                }
+
+                // Start with random delay
+                setTimeout(() => {
+                    requestAnimationFrame(animate);
+                }, Math.random() * 3000);
+            }
         });
     </script>
     </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-divider-top"></div>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/triforge_logo_light.svg" alt="TriForgeLabs Logo" class="footer-logo-icon">
+                        <span class="footer-brand-name">TriForgeLabs</span>
+                    </div>
+                    <p class="footer-tagline">Building the foundations of the digital era.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Share">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Contact">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Code">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="current-year"></span> TriForgeLabs. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="pages/tos.html" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html#about">
+            <a class="navbar-brand" href="../">
                 Tri<span class="highlight">Forge</span>Labs
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -25,13 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about">About</a>
+                        <a class="nav-link" href="../#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="privacy.html">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="data.html">Data Policy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tos.html">Terms of Service</a>
@@ -43,7 +40,7 @@
     <div class="navbar-underline"></div>
 </header>
 
-<body>
+<body style="padding-top: 80px;">
     <!-- Privacy Policy Section -->
     <div class="container">
         <h2 class="mb-4 privacy-title">Privacy Policy</h2>
@@ -54,48 +51,118 @@
             At TriForgeLabs, we are committed to protecting your privacy. This Privacy Policy explains how we
             collect, use, and safeguard your information when you use our web and mobile applications.
         </p>
-        <h5 class="privacy-heading">Information We Collect</h5>
+
+        <h5 class="privacy-heading">App Data Collection and Privacy Overview</h5>
+        <p class="privacy-text">
+            Our app collects and processes certain data to provide you with the best possible experience. This includes crash reporting for debugging, advertising data, user authentication information, and AI-powered features. We are committed to transparency about what data is collected, how it's used, and your rights regarding your information.
+        </p>
+
+        <h5 class="privacy-heading">Crash Reporting and Debugging (Crashlytics)</h5>
+        <p class="privacy-text">
+            Our app uses Firebase Crashlytics to track crashes and errors for debugging purposes. Crashlytics automatically collects crash data (stack traces and related diagnostics) along with a unique Crashlytics installation identifier for each app install. This information is used only to help identify and fix bugs – for example, Crashlytics uses crash stack traces to pinpoint what caused a crash and the installation UUID to measure how many users were affected. No direct personal information (like name or email) is included in these crash reports; they focus on technical details (device model, OS version, app version, and crash logs) needed to resolve issues. Crashlytics retains crash logs and associated IDs for a limited time (currently about 90 days) before deletion, in order to give developers time to review and address the problems. All crash report data is transmitted securely to Firebase and is accessible only to our development team for the purpose of improving the app's stability.
+        </p>
+
+        <h5 class="privacy-heading">Advertising and Location Data (AdMob)</h5>
+        <p class="privacy-text">
+            The app displays ads using Google AdMob, which is an advertising SDK. Our app does not request or use your device's GPS location at all (we do not ask for location permission). However, AdMob may infer an approximate location based on your IP address in order to serve relevant ads. Importantly, this is a coarse location (general region or city) and is determined automatically by Google's servers using the IP address; we (the app developers) do not see or store any location data ourselves. When AdMob is integrated, it automatically collects certain data from the app to personalize and serve ads. For example, Google's AdMob SDK collects and shares the following types of data by default:
+        </p>
         <ul class="privacy-list">
-            <li>Personal information you provide (such as name, email address, etc.)</li>
-            <li>Usage data and analytics</li>
-            <li>Device and log information</li>
+            <li><strong>IP Address</strong> – The device's IP address is collected, which may be used to estimate the general location of the device for ad targeting. (This provides only approximate location, not precise GPS coordinates.)</li>
+            <li><strong>Device Identifiers</strong> – Unique IDs like the Android Advertising ID (a resettable identifier) and app set ID are collected for advertising purposes. These help with functions like capping ad frequency and fraud prevention.</li>
+            <li><strong>App Interaction Data</strong> – Information about how users interact with the app and ads, such as app launches, taps on ads, or video ad views, is automatically logged. This helps AdMob optimize ad delivery (for instance, ensuring ads aren't repeatedly shown if they're not relevant).</li>
+            <li><strong>Diagnostics</strong> – Performance data like app launch time, hang/crash rates (within the ad SDK), and battery or network usage may be collected. This is used to improve the SDK's reliability and ensure ads don't negatively impact app performance.</li>
         </ul>
-        <h5 class="privacy-heading">How We Use Your Information</h5>
+        <p class="privacy-text">
+            All data collected by AdMob is transmitted securely (encrypted in transit) to Google. We do not individually store or process this information on our own servers; it's handled by Google's AdMob service. You can reset or disable the advertising ID on your device if you wish to limit targeted advertising. Our app's use of AdMob is in line with Google's policies, and no additional ad networks are used beyond AdMob.
+        </p>
+
+        <h5 class="privacy-heading">User Authentication (Email, Google, Apple Sign-In)</h5>
+        <p class="privacy-text">
+            For account creation and login, users have three convenient options: email/password, Google Sign-In, or Sign in with Apple.
+        </p>
+        <p class="privacy-text">
+            <strong>Email Sign-Up:</strong> If a user chooses to sign up with an email address, we collect the email and a password (which is securely hashed). This is used to create the user's account in our system. We may also ask for a username or display name, but we do not require unnecessary personal details. The email is used for account identification and for communication (e.g. password resets or important account notices).
+        </p>
+        <p class="privacy-text">
+            <strong>Google Sign-In:</strong> Users can log in with their Google account. This uses OAuth via Google – when you choose this option, Google asks if you permit sharing basic profile info (typically your Google name and email) with our app. Upon consent, Google provides us a unique user ID and your email address (and optionally your name) associated with your Google account. We use this information solely to create or log in to your app account. Using Google Sign-In means you don't have to remember another password, and it adds security (Google handles the authentication). We do not receive any access to your Google password or other Google account data beyond the basic profile info you allow.
+        </p>
+        <p class="privacy-text">
+            <strong>Sign in with Apple:</strong> For users on iOS, we support Apple's privacy-friendly login. Apple allows you to hide your email – if you choose "Hide My Email," Apple will generate a random relay email (ending in @privaterelay.appleid.com) that forwards to your real email. We receive either this relay address or your actual email (depending on what you choose), along with a name (which you can edit before sharing). As with Google, Apple provides us a unique identifier that we use to create your account. We do not see your Apple account password or any other personal data from your Apple ID. Apple's system is designed to protect your privacy while still letting you create an account in our app.
+        </p>
+        <p class="privacy-text">
+            Regardless of which sign-in method you use, the purpose is only to authenticate your identity and create your account. We treat all account information (email, name, and any OAuth IDs) as private and do not expose it publicly. This information is stored securely in our database and is used only for login and account-related features (for example, syncing your data across devices). We do not share your login information with any third parties – it is only processed by the authentication providers (Google or Apple) at the time of login, and by our app's backend to manage your account.
+        </p>
+
+        <h5 class="privacy-heading">AI Prompt Processing (OpenAI ChatGPT Integration)</h5>
+        <p class="privacy-text">
+            A key feature of our app is the ability to provide intelligent feedback and suggestions for foods and habits, powered by OpenAI's ChatGPT. When you input a prompt or use the voice recorder to describe a meal or a habit, that input is sent to OpenAI's servers to generate a helpful AI response. For example, you might type or say, "I ate a cheese pizza for lunch, was that healthy?" – this text is forwarded to the ChatGPT API, which processes it and returns an answer (which we then display to you in the app).
+        </p>
+        <p class="privacy-text">
+            It's important to clarify what data is (and isn't) being shared in this process. We do not send any personally identifying information about you along with the prompt. In fact, our app does not need to know who specifically is asking the question when getting an AI answer. We only send the content of your query (e.g., "cheese pizza for lunch") and perhaps some contextual parameters, but not your name, email, or any account IDs. OpenAI's system will solely use the prompt text to generate a response; it does not know the identity of the user.
+        </p>
+        <p class="privacy-text">
+            OpenAI does not use API-provided data to train its general models or improve their services (as of a policy change in 2023). This means the prompts we send from users are not being retained to teach the AI long-term. However, OpenAI may temporarily log the content of requests for abuse monitoring and debugging purposes. By default, API inputs (prompts) and outputs can be kept for up to 30 days in OpenAI's system, after which they are deleted. This retention helps OpenAI ensure the service is being used properly and to investigate any technical issues or misuse.
+        </p>
+        <p class="privacy-text">
+            We have an agreement to use the OpenAI API under their terms, which include robust data privacy measures. All communications with OpenAI's API are encrypted in transit. Additionally, we do not receive or store the AI's responses on our servers beyond what is needed to show you the answer. The conversation between you and the AI (via our app) is transient – once the response is displayed and any session context is handled, we don't use that data elsewhere. The prompts you submit are not used for any other purpose than getting the AI reply you requested. And as stated, no sensitive personal user data is included in those requests by our design. (Of course, users should avoid volunteering personal sensitive information in any prompts for their own privacy protection as well.)
+        </p>
+
+        <h5 class="privacy-heading">User Data Deletion and Account Removal</h5>
+        <p class="privacy-text">
+            We respect users' control over their data. Users can request to delete their account and data at any time. In compliance with platform policies and privacy regulations, our app provides a straightforward way to initiate account deletion. Specifically, if you have an account with us, you can go into the app's settings and find an option to "Delete Account" (or similarly named). Using that will either directly start the deletion process or provide instructions (such as confirming your password or clicking a verification link) to ensure the request is genuine.
+        </p>
+        <p class="privacy-text">
+            When you request account deletion, we will:
+        </p>
         <ul class="privacy-list">
-            <li>To provide and maintain our services</li>
-            <li>To improve user experience and our products</li>
-            <li>To communicate with you about updates or support</li>
-            <li>To comply with legal obligations</li>
+            <li>Delete your account information from our database. This includes your email, login credentials, and any profile data we have.</li>
+            <li>Delete or anonymize any personal data associated with your account (for example, any saved preferences, or entries you've logged that are tied to you). If certain data cannot be completely erased from backups or logs immediately, we will anonymize it and remove it entirely as soon as possible.</li>
+            <li>Remove third-party links associated with your account. For instance, we will remove any Crashlytics identifiers or analytics events linked to your user ID, and ensure that if you logged in via Google or Apple, those tokens are invalidated.</li>
+            <li>Cease further data collection for your account. Once deletion is confirmed, no more analytics or data will be collected under your user ID.</li>
         </ul>
-        <h5 class="privacy-heading">Advertising</h5>
         <p class="privacy-text">
-            Some of our applications may display advertisements to users who do not have an active subscription.
-            These ads may be provided by third-party advertising partners who may use cookies, device identifiers,
-            or similar technologies to deliver relevant ads and measure their effectiveness. Information collected
-            for advertising purposes may include device information, usage data, and, in some cases, limited
-            demographic information. We do not share your personal information such as your name or email address
-            with advertisers without your consent. You can manage your ad preferences or opt out of personalized ads
-            through your device settings or by following instructions provided within the application.
+            We aim to fulfill deletion requests promptly. After you confirm you want to delete your account, we process the deletion within a reasonable time frame (typically within a few days). You will lose access to the account once deletion is finalized, and this action is generally irreversible (you'd have to create a new account if you wish to use the app again). We also provide a way for you to contact support (via email) if you have any trouble with the deletion feature or if you want to request deletion through support.
         </p>
-        <h5 class="privacy-heading">Information Sharing</h5>
         <p class="privacy-text">
-            We do not sell or rent your personal information. We may share information with trusted third parties
-            who assist us in operating our services, as required by law, or to protect our rights.
+            This deletion capability is provided to comply with Google Play's User Data policy, which requires that apps offering account creation must allow users to request account deletion. It's also aligned with broader privacy laws (for example, the California Consumer Privacy Act gives users the right to request deletion of their data). In short, you are in control: if you no longer want us to have your information, you can wipe it out. We do not keep your data after a deletion request except as required for legal compliance or legitimate internal purposes (in which case, we would anonymize it).
         </p>
-        <h5 class="privacy-heading">Your Choices</h5>
+
+        <h5 class="privacy-heading">Primary Audience and Regional Compliance</h5>
         <p class="privacy-text">
-            You may access, update, or delete your personal information by contacting us. You may also opt out of
-            certain communications at any time.
+            The primary audience for our app is in the United States. Our content and features are designed for U.S. users, and the app is not specifically directed towards children under 13 years old. Because we target a general adult audience in the U.S., we adhere to U.S. privacy regulations and industry standards in handling user data. For example, we abide by laws such as the California Consumer Privacy Act (CCPA) for eligible users, which includes provisions like giving users the right to access or delete their data (as noted above).
         </p>
-        <h5 class="privacy-heading">Security</h5>
         <p class="privacy-text">
-            We implement reasonable security measures to protect your information. However, no method of
-            transmission over the Internet or electronic storage is 100% secure.
+            If we expand our audience or region in the future, we will update our practices to ensure compliance with any additional local privacy laws (such as GDPR in Europe, etc.), but currently our user base is primarily U.S. residents. Not targeting children means that COPPA (Children's Online Privacy Protection Act) is not applicable to our app – we do not knowingly collect personal information from anyone under 13. Our app's content is aimed at adults (for example, tracking diets or habits typically for grown users). During account signup, users are required to confirm they are of an appropriate age. If we ever learned that a user under 13 (or the minimum age in their jurisdiction) has created an account improperly, we would delete any such account and its data in accordance with COPPA guidelines.
         </p>
+        <p class="privacy-text">
+            In summary, focusing on a U.S. audience allows us to streamline our privacy measures to U.S. standards. We continuously monitor changes in privacy regulations (both in the U.S. at the state/federal level, and internationally) to ensure our app remains in compliance. Our commitment is to be transparent and protective of user data, no matter where our users are from. If you have any questions or concerns about how we handle data, especially as it pertains to your region or rights, we encourage you to review our full Privacy Policy or reach out to our support team.
+        </p>
+
+        <h5 class="privacy-heading">Data Retention and Account Deletion</h5>
+        <p class="privacy-text">
+            TriForgeLabs applications only retain the minimum data necessary for user accounts.
+            This data may include, but is not limited to, user's names, emails, account identifiers,
+            and any provided anthropometric information. 
+            <br><br>
+            All of the user's data is removed if the user account is deleted.
+            If you wish to delete your account, please follow these steps:
+        </p>
+        <ol class="privacy-list">
+            <li>Open the application on your mobile device.</li>
+            <li>Navigate to the <strong>Settings</strong> page.</li>
+            <li>Select <strong>Delete Account</strong>.</li>
+            <li>Confirm in the popup that you would like to delete the account.</li>
+        </ol>
+        <p class="privacy-text">
+            <strong>Important:</strong> When an account is deleted, <u>all data pertaining to that account
+                is purged</u>. Deleting an account is permanent and cannot be undone or recovered after
+            deletion.
+        </p>
+
         <h5 class="privacy-heading">Contact Us</h5>
         <p class="privacy-text">
             If you have any questions about this Privacy Policy, please contact us at
-            <a href="mailto:triforgelabs@gmail.com" class="privacy-link">triforgelabs@gmail.com</a>.
+            <a href="mailto:contact@triforgelabs.com" class="privacy-link">contact@triforgelabs.com</a>.
         </p>
     </div>
 </body>
