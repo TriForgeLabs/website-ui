@@ -640,6 +640,8 @@ header {
   align-items: center;
   pointer-events: none;
   transition: background 0.5s ease, backdrop-filter 0.5s ease;
+  overflow-y: auto;
+  padding: 2rem 0;
 }
 
 .suite-modal-overlay.suite-modal-active {
@@ -800,8 +802,9 @@ header {
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 1rem;
-  min-height: 2.3em;
   opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .suite-modal-description {
@@ -809,8 +812,14 @@ header {
   font-size: 0.92rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  min-height: 4.8em;
   opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.suite-modal-text-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .suite-modal-features {
@@ -896,12 +905,16 @@ header {
 
 /* Modal responsive */
 @media (max-width: 768px) {
+  .suite-modal-overlay {
+    align-items: flex-start;
+    padding: 3.5rem 0 2rem;
+  }
+
   .suite-modal-content {
     flex-direction: column;
     gap: 2rem;
     padding: 1.5rem;
-    max-height: 90vh;
-    overflow-y: auto;
+    width: 92%;
   }
 
   .suite-modal-phone {
@@ -923,6 +936,7 @@ header {
   .suite-modal-close {
     top: 1rem;
     right: 1rem;
+    position: fixed;
   }
 }
 
@@ -2095,11 +2109,10 @@ header {
 
   .ttc-feature-text-col {
     text-align: center;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
-  .ttc-feature-section .flex-lg-row-reverse .ttc-feature-text-col,
   .ttc-feature-section .flex-lg-row-reverse .ttc-feature-img-col {
     padding-left: 0;
     padding-right: 0;
@@ -2141,6 +2154,16 @@ header {
 
   .ttc-device-frame {
     max-width: 260px;
+  }
+
+  .ttc-feature-text-col {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .ttc-feature-section .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 

@@ -893,34 +893,40 @@
             suiteModal.classList.add('suite-modal-active');
             document.body.style.overflow = 'hidden';
 
-            // Reset elements
-            suiteModalTitle.style.opacity = '0';
-            suiteModalDesc.style.opacity = '0';
-            suiteModalFeatures.style.opacity = '0';
-            suiteModalCta.style.opacity = '0';
+            // Reset all animated elements
+            suiteModalTitle.classList.remove('suite-modal-text-visible');
+            suiteModalDesc.classList.remove('suite-modal-text-visible');
+            suiteModalFeatures.classList.remove('suite-modal-features-visible');
+            suiteModalCta.classList.remove('suite-modal-cta-visible');
+
+            // Set text content
+            suiteModalTitle.textContent = titleText;
+            suiteModalDesc.textContent = descText;
 
             // Reset carousel
             goToSlide(0);
             startCarousel();
 
-            // Staggered typewriter animation (faster)
+            // Staggered fade-in animations
             setTimeout(() => {
-                typeWriter(suiteModalTitle, titleText, 15, () => {
-                    typeWriter(suiteModalDesc, descText, 6, () => {
-                        suiteModalFeatures.style.opacity = '1';
-                        suiteModalFeatures.classList.add('suite-modal-features-visible');
-                        setTimeout(() => {
-                            suiteModalCta.style.opacity = '1';
-                            suiteModalCta.classList.add('suite-modal-cta-visible');
-                        }, 300);
-                    });
-                });
-            }, 400);
+                suiteModalTitle.classList.add('suite-modal-text-visible');
+            }, 300);
+            setTimeout(() => {
+                suiteModalDesc.classList.add('suite-modal-text-visible');
+            }, 500);
+            setTimeout(() => {
+                suiteModalFeatures.classList.add('suite-modal-features-visible');
+            }, 700);
+            setTimeout(() => {
+                suiteModalCta.classList.add('suite-modal-cta-visible');
+            }, 900);
         }
 
         function closeSuiteModal() {
             suiteModal.classList.remove('suite-modal-active');
             document.body.style.overflow = '';
+            suiteModalTitle.classList.remove('suite-modal-text-visible');
+            suiteModalDesc.classList.remove('suite-modal-text-visible');
             suiteModalFeatures.classList.remove('suite-modal-features-visible');
             suiteModalCta.classList.remove('suite-modal-cta-visible');
             stopCarousel();
