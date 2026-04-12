@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TalkToCalorie — TriForgeLabs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../">
+                Tri<span class="highlight">Forge</span>Labs
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown suite-dropdown">
+                        <a class="nav-link active" href="suite.html">The Suite</a>
+                        <div class="suite-dropdown-menu">
+                            <a href="talktocalorie.html" class="suite-dropdown-item">
+                                <img src="../assets/TalkToCalorie/app-logo.jpg" alt="TalkToCalorie" class="suite-dropdown-icon">
+                                <div class="suite-dropdown-info">
+                                    <span class="suite-dropdown-name">TalkToCalorie</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tos.html">Terms of Service</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="navbar-underline"></div>
+</header>
+
+<body class="ttc-snap-container">
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="ttc-hero ttc-snap-section">
+        <div class="ttc-hero-glow"></div>
+        <div class="ttc-hero-particles" id="heroParticles"></div>
+
+        <div class="container position-relative" style="z-index: 5;">
+            <div class="row align-items-center ttc-hero-row">
+                <!-- Left: Text -->
+                <div class="col-lg-6 ttc-hero-text">
+                    <div class="ttc-hero-badge animate-fade-up" style="animation-delay: 0.2s;">
+                        <img src="../assets/TalkToCalorie/app-logo.jpg" alt="TalkToCalorie" class="ttc-hero-badge-icon">
+                        <span>TalkToCalorie</span>
+                    </div>
+                    <h1 class="ttc-hero-title animate-fade-up" style="animation-delay: 0.4s;">
+                        Your AI-Powered<br>
+                        <span class="ttc-gradient-text">Nutrition & Habit</span><br>
+                        Companion
+                    </h1>
+                    <p class="ttc-hero-subtitle animate-fade-up" style="animation-delay: 0.6s;">
+                        Say goodbye to tedious manual logging. Whether you want to talk, scan, or snap — we make
+                        reaching your goals effortless and affordable.
+                    </p>
+                    <div class="ttc-hero-cta animate-fade-up" style="animation-delay: 0.8s;">
+                        <a href="#features" class="btn btn-primary-gold">Explore Features</a>
+                    </div>
+                </div>
+
+                <!-- Right: Floating Phone Screens -->
+                <div class="col-lg-6 ttc-hero-visuals">
+                    <div class="ttc-floating-phones">
+                        <div class="ttc-phone ttc-phone-back animate-float-in" style="animation-delay: 0.6s;">
+                            <img src="../assets/TalkToCalorie/Log.jpg" alt="Log Screen">
+                        </div>
+                        <div class="ttc-phone ttc-phone-main animate-float-in" style="animation-delay: 0.3s;">
+                            <img src="../assets/TalkToCalorie/Home.jpg" alt="Home Screen">
+                        </div>
+                        <div class="ttc-phone ttc-phone-side animate-float-in" style="animation-delay: 0.9s;">
+                            <img src="../assets/TalkToCalorie/Habits.jpg" alt="Habits Screen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="ttc-scroll-indicator animate-fade-up" style="animation-delay: 1.2s;">
+            <span>SCROLL TO EXPLORE</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURE SECTIONS ==================== -->
+    <div id="features">
+
+        <!-- SECTION 1: HOME -->
+        <section class="ttc-feature-section ttc-section-home ttc-snap-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 ttc-feature-img-col ttc-reveal">
+                        <div class="ttc-device-frame ttc-tilt-left">
+                            <div class="ttc-device-glow"></div>
+                            <img src="../assets/TalkToCalorie/Home.jpg" alt="Home Dashboard"
+                                class="ttc-device-screenshot">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ttc-feature-text-col ttc-reveal">
+                        <div class="ttc-feature-number">01</div>
+                        <h2 class="ttc-feature-title">Your Dashboard,<br><span class="ttc-gradient-text">At a Glance</span></h2>
+                        <p class="ttc-feature-description">
+                            The Home screen gives you a beautiful, real-time overview of your daily nutrition. See your
+                            calorie budget, macronutrient breakdown, and streaks — all in one place. It's the command
+                            center for your health journey.
+                        </p>
+                        <div class="ttc-feature-highlights">
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Real-time calorie tracking ring</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Daily macro breakdown</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Streak & XP progress</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: LOG -->
+        <section class="ttc-feature-section ttc-section-log ttc-snap-section">
+            <div class="container">
+                <div class="row align-items-center g-5 flex-lg-row-reverse">
+                    <div class="col-lg-6 ttc-feature-img-col ttc-reveal">
+                        <div class="ttc-device-frame ttc-tilt-right">
+                            <div class="ttc-device-glow ttc-glow-right"></div>
+                            <img src="../assets/TalkToCalorie/Log.jpg" alt="AI Chat Log"
+                                class="ttc-device-screenshot">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ttc-feature-text-col ttc-reveal">
+                        <div class="ttc-feature-number">02</div>
+                        <h2 class="ttc-feature-title">Chat to Track —<br><span class="ttc-gradient-text">Just Tell Calorie</span></h2>
+                        <p class="ttc-feature-description">
+                            Simply tell our AI helper, Calorie, what you ate. No more digging through databases or
+                            guessing portion sizes. Speak or type naturally — "I had a chicken sandwich and a coffee" —
+                            and Calorie logs it instantly.
+                        </p>
+                        <div class="ttc-feature-highlights">
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Natural language understanding</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Voice & text input</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Instant nutritional breakdown</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: BARCODE & SCAN -->
+        <section class="ttc-feature-section ttc-section-scan ttc-snap-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 ttc-feature-img-col ttc-reveal">
+                        <div class="ttc-device-frame ttc-tilt-left">
+                            <div class="ttc-device-glow"></div>
+                            <img src="../assets/TalkToCalorie/Barcode %26 Scan.jpg" alt="Barcode Scanner"
+                                class="ttc-device-screenshot">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ttc-feature-text-col ttc-reveal">
+                        <div class="ttc-feature-number">03</div>
+                        <h2 class="ttc-feature-title">Snap & Scan —<br><span class="ttc-gradient-text">Instant Recognition</span></h2>
+                        <p class="ttc-feature-description">
+                            Point your camera at any nutrition label or barcode and watch the magic happen. Our
+                            high-speed scanner identifies products in milliseconds, logging every detail so you don't
+                            have to.
+                        </p>
+                        <div class="ttc-feature-highlights">
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>High-speed barcode scanning</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Nutrition label OCR</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Photo-based meal logging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HABITS -->
+        <section class="ttc-feature-section ttc-section-habits ttc-snap-section">
+            <div class="container">
+                <div class="row align-items-center g-5 flex-lg-row-reverse">
+                    <div class="col-lg-6 ttc-feature-img-col ttc-reveal">
+                        <div class="ttc-device-frame ttc-tilt-right">
+                            <div class="ttc-device-glow ttc-glow-right"></div>
+                            <img src="../assets/TalkToCalorie/Habits.jpg" alt="Habit Tracking"
+                                class="ttc-device-screenshot">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ttc-feature-text-col ttc-reveal">
+                        <div class="ttc-feature-number">04</div>
+                        <h2 class="ttc-feature-title">Build Habits,<br><span class="ttc-gradient-text">Earn Rewards</span></h2>
+                        <p class="ttc-feature-description">
+                            Tell Calorie your goals and instantly create custom habits with smart reminders. Earn XP and
+                            level up as you master your daily routines. Gamified tracking that makes consistency feel
+                            rewarding, not exhausting.
+                        </p>
+                        <div class="ttc-feature-highlights">
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>AI-generated custom habits</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>XP & leveling system</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Smart reminders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: LOG HISTORY -->
+        <section class="ttc-feature-section ttc-section-history ttc-snap-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 ttc-feature-img-col ttc-reveal">
+                        <div class="ttc-device-frame ttc-tilt-left">
+                            <div class="ttc-device-glow"></div>
+                            <img src="../assets/TalkToCalorie/Log History.jpg" alt="Log History"
+                                class="ttc-device-screenshot">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ttc-feature-text-col ttc-reveal">
+                        <div class="ttc-feature-number">05</div>
+                        <h2 class="ttc-feature-title">Your Journey,<br><span class="ttc-gradient-text">Fully Documented</span></h2>
+                        <p class="ttc-feature-description">
+                            Every meal, every snack, every victory — catalogued and searchable. Browse your complete
+                            nutrition history with detailed breakdowns by day, week, or month. Spot trends and celebrate
+                            how far you've come.
+                        </p>
+                        <div class="ttc-feature-highlights">
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Complete meal timeline</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Detailed per-entry breakdowns</span>
+                            </div>
+                            <div class="ttc-highlight-item">
+                                <div class="ttc-highlight-dot"></div>
+                                <span>Trend analysis & insights</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ==================== CTA / DOWNLOAD SECTION ==================== -->
+    <section class="ttc-cta-section ttc-snap-section">
+        <div class="ttc-cta-glow"></div>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="ttc-cta-content text-center ttc-reveal">
+                <img src="../assets/TalkToCalorie/Icon-App-1024x1024@1x.png" alt="TalkToCalorie Icon"
+                    class="ttc-cta-icon animate-pulse-glow">
+                <h2 class="ttc-cta-title">Stop Counting.<br><span class="ttc-gradient-text">Start Living.</span></h2>
+                <p class="ttc-cta-subtitle">Download TalkToCalorie today and experience the future of effortless
+                    tracking.</p>
+
+                <div class="ttc-cta-buttons">
+                    <a href="#" class="store-btn store-btn-apple" aria-label="Download on the App Store">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <div class="store-btn-text">
+                            <span class="store-btn-small">Download on the</span>
+                            <span class="store-btn-large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="store-btn store-btn-google" aria-label="Get it on Google Play">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.437 11.16l-15.98-9.22a1 1 0 0 0-1.5.86v18.4a1 1 0 0 0 1.5.86l15.98-9.22a.97.97 0 0 0 0-1.68z"/>
+                        </svg>
+                        <div class="store-btn-text">
+                            <span class="store-btn-small">Get it on</span>
+                            <span class="store-btn-large">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-divider-top"></div>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../assets/triforge_logo_light.svg" alt="TriForgeLabs Logo" class="footer-logo-icon">
+                        <span class="footer-brand-name">TriForgeLabs</span>
+                    </div>
+                    <p class="footer-tagline">Building the foundations of the digital era.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Share">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Contact">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Code">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="current-year"></span> TriForgeLabs. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="tos.html" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // ===== Scroll-triggered reveal animations =====
+        const revealElements = document.querySelectorAll('.ttc-reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('ttc-revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -60px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== Floating particles in hero =====
+        const particleContainer = document.getElementById('heroParticles');
+        if (particleContainer) {
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('ttc-particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (4 + Math.random() * 6) + 's';
+                particle.style.width = particle.style.height = (2 + Math.random() * 3) + 'px';
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        // ===== Parallax on phone images =====
+        const phones = document.querySelectorAll('.ttc-phone');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            phones.forEach((phone, i) => {
+                const speed = (i - 1) * 0.03;
+                phone.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        });
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
