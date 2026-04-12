@@ -331,66 +331,67 @@
                 </div>
             </div>
 
-            <!-- Modal Overlay -->
-            <div class="suite-modal-overlay" id="suiteModal">
-                <div class="suite-modal-content">
-                    <button class="suite-modal-close" id="suiteModalClose" aria-label="Close">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                    <div class="suite-modal-phone-wrapper">
-                        <div class="suite-modal-phone">
-                            <div class="suite-modal-carousel" id="suiteCarousel">
-                                <img src="assets/TalkToCalorie/Home.jpg" alt="Home" class="suite-carousel-img suite-carousel-active">
-                                <img src="assets/TalkToCalorie/Log.jpg" alt="Log" class="suite-carousel-img">
-                                <img src="assets/TalkToCalorie/Barcode %26 Scan.jpg" alt="Barcode & Scan" class="suite-carousel-img">
-                                <img src="assets/TalkToCalorie/Habits.jpg" alt="Habits" class="suite-carousel-img">
-                                <img src="assets/TalkToCalorie/Log History.jpg" alt="Log History" class="suite-carousel-img">
-                            </div>
-                        </div>
-                        <div class="suite-carousel-dots" id="suiteCarouselDots">
-                            <button class="suite-carousel-dot suite-carousel-dot-active" data-index="0" aria-label="Slide 1"></button>
-                            <button class="suite-carousel-dot" data-index="1" aria-label="Slide 2"></button>
-                            <button class="suite-carousel-dot" data-index="2" aria-label="Slide 3"></button>
-                            <button class="suite-carousel-dot" data-index="3" aria-label="Slide 4"></button>
-                            <button class="suite-carousel-dot" data-index="4" aria-label="Slide 5"></button>
-                        </div>
-                    </div>
-                    <div class="suite-modal-info">
-                        <div class="suite-modal-badge">
-                            <img src="assets/TalkToCalorie/app-logo.jpg" alt="" class="suite-modal-badge-icon">
-                            <span>TalkToCalorie</span>
-                        </div>
-                        <h3 class="suite-modal-title" id="suiteModalTitle"></h3>
-                        <p class="suite-modal-description" id="suiteModalDesc"></p>
-                        <div class="suite-modal-features" id="suiteModalFeatures">
-                            <div class="suite-modal-feature">
-                                <div class="suite-modal-feature-dot"></div>
-                                <span>Chat or speak to log meals instantly</span>
-                            </div>
-                            <div class="suite-modal-feature">
-                                <div class="suite-modal-feature-dot"></div>
-                                <span>Snap photos & scan barcodes</span>
-                            </div>
-                            <div class="suite-modal-feature">
-                                <div class="suite-modal-feature-dot"></div>
-                                <span>Build habits & earn XP rewards</span>
-                            </div>
-                        </div>
-                        <a href="pages/talktocalorie.html" class="suite-modal-cta" id="suiteModalCta">
-                            Learn More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+
+    <!-- Modal Overlay (outside suite section to avoid stacking context issues) -->
+    <div class="suite-modal-overlay" id="suiteModal">
+        <div class="suite-modal-content">
+            <button class="suite-modal-close" id="suiteModalClose" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="suite-modal-phone-wrapper">
+                <div class="suite-modal-phone">
+                    <div class="suite-modal-carousel" id="suiteCarousel">
+                        <img src="assets/TalkToCalorie/Home.jpg" alt="Home" class="suite-carousel-img suite-carousel-active">
+                        <img src="assets/TalkToCalorie/Log.jpg" alt="Log" class="suite-carousel-img">
+                        <img src="assets/TalkToCalorie/Barcode %26 Scan.jpg" alt="Barcode & Scan" class="suite-carousel-img">
+                        <img src="assets/TalkToCalorie/Habits.jpg" alt="Habits" class="suite-carousel-img">
+                        <img src="assets/TalkToCalorie/Log History.jpg" alt="Log History" class="suite-carousel-img">
+                    </div>
+                </div>
+                <div class="suite-carousel-dots" id="suiteCarouselDots">
+                    <button class="suite-carousel-dot suite-carousel-dot-active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="suite-carousel-dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="suite-carousel-dot" data-index="2" aria-label="Slide 3"></button>
+                    <button class="suite-carousel-dot" data-index="3" aria-label="Slide 4"></button>
+                    <button class="suite-carousel-dot" data-index="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+            <div class="suite-modal-info">
+                <div class="suite-modal-badge">
+                    <img src="assets/TalkToCalorie/app-logo.jpg" alt="" class="suite-modal-badge-icon">
+                    <span>TalkToCalorie</span>
+                </div>
+                <h3 class="suite-modal-title" id="suiteModalTitle"></h3>
+                <p class="suite-modal-description" id="suiteModalDesc"></p>
+                <div class="suite-modal-features" id="suiteModalFeatures">
+                    <div class="suite-modal-feature">
+                        <div class="suite-modal-feature-dot"></div>
+                        <span>Chat or speak to log meals instantly</span>
+                    </div>
+                    <div class="suite-modal-feature">
+                        <div class="suite-modal-feature-dot"></div>
+                        <span>Snap photos & scan barcodes</span>
+                    </div>
+                    <div class="suite-modal-feature">
+                        <div class="suite-modal-feature-dot"></div>
+                        <span>Build habits & earn XP rewards</span>
+                    </div>
+                </div>
+                <a href="pages/talktocalorie.html" class="suite-modal-cta" id="suiteModalCta">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Validation at Scale Section -->
     <section id="validation" class="validation-section">

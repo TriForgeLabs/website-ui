@@ -1289,6 +1289,7 @@ header {
   font-weight: 700;
   font-style: italic;
   margin-bottom: 1rem;
+  padding-top: 5rem;
 }
 
 .suite-page-subtitle {
@@ -1301,7 +1302,7 @@ header {
 
 .suite-page-products {
   background-color: #0a0a08;
-  padding: 2rem 0 6rem;
+  padding: 3rem 0 10rem;
 }
 
 /* Store Download Buttons */
