@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us — TriForgeLabs</title>
+    <!-- Google Fonts: Rajdhani -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../">
+                Tri<span class="highlight">Forge</span>Labs
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown suite-dropdown">
+                        <a class="nav-link" href="suite.html">The Suite</a>
+                        <div class="suite-dropdown-menu">
+                            <a href="talktocalorie.html" class="suite-dropdown-item">
+                                <img src="../assets/TalkToCalorie/app-logo.jpg" alt="TalkToCalorie" class="suite-dropdown-icon">
+                                <div class="suite-dropdown-info">
+                                    <span class="suite-dropdown-name">TalkToCalorie</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tos.html">Terms of Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="navbar-underline"></div>
+</header>
+
+<body>
+    <!-- Hero Section with animated background -->
+    <section class="suite-page-hero" style="padding-top: 80px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="suite-page-glow"></div>
+        <!-- Floating particles -->
+        <div class="contact-particles" id="contactParticles"></div>
+        <div class="container position-relative d-flex flex-column align-items-center justify-content-center" style="z-index: 2;">
+            <!-- Envelope icon -->
+            <div class="contact-icon-wrap animate-fade-up" style="animation-delay: 0.2s;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                    stroke="#F3C442" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+            </div>
+            <h1 class="suite-page-title animate-fade-up" style="animation-delay: 0.4s; padding-top: 1.5rem;">Contact Us</h1>
+            <p class="suite-page-subtitle animate-fade-up" style="animation-delay: 0.6s;">
+                Have a question or want to get in touch? We'd love to hear from you.
+            </p>
+            <div class="contact-card animate-fade-up" style="animation-delay: 0.8s;">
+                <h3 class="contact-brand-name">
+                    Tri<span class="highlight">Forge</span>Labs
+                </h3>
+                <a href="mailto:contact@triforgelabs.com" class="contact-email-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                    contact@triforgelabs.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Floating particles (same style as TalkToCalorie hero)
+        (function () {
+            const container = document.getElementById('contactParticles');
+            const count = 30;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('span');
+                p.classList.add('contact-particle');
+                const size = Math.random() * 4 + 2;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animationDuration = (Math.random() * 6 + 4) + 's';
+                p.style.animationDelay = (Math.random() * 6) + 's';
+                container.appendChild(p);
+            }
+        })();
+    </script>
+</body>
+
+</html>
